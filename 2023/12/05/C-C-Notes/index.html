@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hello World | Jeff Developed</title>
+  <title>C++/C Notes | Jeff Developed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="In C&#x2F;C++, we can easily understand a variable declarition like: 1int a; But lol what about this: 1int (*(*v)[])(); The systematical way to declare or understand a variable is:  find the innermost">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2023/12/02/hello-world/index.html">
+<meta property="og:title" content="C++&#x2F;C Notes">
+<meta property="og:url" content="http://example.com/2023/12/05/C-C-Notes/index.html">
 <meta property="og:site_name" content="Jeff Developed">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="In C&#x2F;C++, we can easily understand a variable declarition like: 1int a; But lol what about this: 1int (*(*v)[])(); The systematical way to declare or understand a variable is:  find the innermost">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-12-03T01:46:53.765Z">
-<meta property="article:modified_time" content="2023-12-03T03:51:37.105Z">
+<meta property="article:published_time" content="2023-12-06T01:48:17.000Z">
+<meta property="article:modified_time" content="2023-12-06T02:37:43.939Z">
 <meta property="article:author" content="Jeff Gao">
+<meta property="article:tag" content="tech">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Jeff Developed" type="application/atom+xml">
@@ -151,39 +152,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-C-C-Notes" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      C++/C Notes
     </h1>
   
 
         
-        <a href="/2023/12/02/hello-world/" class="archive-article-date">
-  	<time datetime="2023-12-03T01:46:53.765Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-02</time>
+        <a href="/2023/12/05/C-C-Notes/" class="archive-article-date">
+  	<time datetime="2023-12-06T01:48:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p>In C&#x2F;C++, we can easily understand a variable declarition like:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a;</span><br></pre></td></tr></table></figure>
+<p>But lol what about this:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> (*(*v)[])();</span><br></pre></td></tr></table></figure>
+<p>The systematical way to declare or understand a variable is:</p>
+<ol>
+<li>find the innermost structure, usually it’s a name such as: int <strong>a</strong>[ ] (variable name is ‘a’)</li>
+<li>then go right, find the structure you see, but do not skip bracket if there is any: int a <strong>[ ]</strong>  (it’s an array)</li>
+<li>the look to the left, find the structure you see, but do not skip bracket if there is any: <strong>int</strong> a [ ] (type is int)</li>
+<li>if there is a bracket, consider the element in the bracket and jump out of the bracket</li>
+<li>repeat the above process until you find the final data type</li>
+</ol>
+<h3 id="let’s-do-some-practice"><a href="#let’s-do-some-practice" class="headerlink" title="let’s do some practice"></a>let’s do some practice</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *v[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+<p>First spot innermost name is ‘v’, then look to the right its size is ‘5’, then look to the left array element type is pointer to int. Thus ‘v’ is an array of size 5, each element in the array is a pointer to int. (It’s more clear if we write it as int* v[5])</p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> (*v)[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+<p>But here we have a bracket, we can’t skip bracket if we do have it. So first spot innermost ‘*v’ is a pointer,then look to the right it points to an array of size 5, then look to the left the elements in the array are int type. Thus ‘v’ is a pointer points to an array of 5 int.</p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">func</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>‘func’ is a function declaration and it returns an int.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> (*func)();</span><br></pre></td></tr></table></figure>
+<p>‘func’ is a pointer and it points to a function that returns a int. This is so called function pointer.</p>
+<h3 id="Now-we-move-to-something-more-interesting"><a href="#Now-we-move-to-something-more-interesting" class="headerlink" title="Now we move to something more interesting"></a>Now we move to something more interesting</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> (*v[])();</span><br></pre></td></tr></table></figure>
+<p>Starting from innermost ‘v’ is an array, elements in the array are pointers. Then moving out of the bracket, each pointer in the array points to a function that returns an int.</p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> (*(*v)[])();</span><br></pre></td></tr></table></figure>
+<p>Starting from innermost, ‘v’ is a pointer, points to an array of pointers. Each pointer in the array points to a function that returns an int</p>
+<h3 id="the-position-of-const-keyword-has-different-impacts"><a href="#the-position-of-const-keyword-has-different-impacts" class="headerlink" title="the position of const keyword has different impacts"></a>the position of const keyword has different impacts</h3><p><strong>int const a</strong> is same as <strong>const int a</strong>, but pointer makes it complicated:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="type">const</span> *r;</span><br></pre></td></tr></table></figure>
+<p>variabel is ‘r’, look to the right there’s nothing then look to the left ‘r’ is a pointer, then look further left ‘r’ points to a const int. Basically (*r) can <strong>not</strong> be changed but r can, we can update r so r still points to a const int.</p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *<span class="type">const</span> r;</span><br></pre></td></tr></table></figure>
+<p>variabel is ‘r’, look to the right there’s nothing then look to the left ‘r’ is a const, then look further left ‘r’ is a pointer points to an int. Basically ‘r’ can <strong>not</strong> be changed but int is not const, we can update the int value so that (*r) can be changed.</p>
 
       
 
@@ -192,6 +213,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tech</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -242,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/02/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/05/C-C-Notes/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -256,18 +288,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2023/12/04/React-Learning/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          React-Learning
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/04/02/about-myself/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Something About Me</div>
+    <a href="/2023/12/04/React-Learning/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React-Learning</div>
       <i class="icon-circle-right"></i>
     </a>
   
