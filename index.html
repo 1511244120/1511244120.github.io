@@ -56,8 +56,6 @@
 			
 				<li><a href="/2023/04/02/about-myself/">main page</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -110,8 +108,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -130,9 +126,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/2023/04/02/about-myself/">main page</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 100%"><a href="/2023/04/02/about-myself/">main page</a></li>
 		        
 				</ul>
 			</nav>
@@ -148,6 +142,143 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-nodejs-project" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/13/nodejs-project/">nodejs-project</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/13/nodejs-project/" class="archive-article-date">
+  	<time datetime="2023-12-14T03:51:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Recently I completed a full-stack transaction recorder project using <strong>Node&#x2F;Express</strong> as backend and <strong>MongoDB</strong> as database, here is the demo and some cool feature design explanation of the project:</p>
+<h4 id="1-login-and-Register-page"><a href="#1-login-and-Register-page" class="headerlink" title="1 login and Register page"></a>1 login and Register page</h4><div style="display: inline-block">
+    <img style="width: 25%" src="/images/login.PNG"></img>
+    <img style="width: 25%" src="/images/register.PNG"></img>
+</div>
+
+<p>User can start by register a Username with a Password, otherwise login won’t be successful without a valid Username or Password</p>
+<div style="display: inline-block">
+    <img style="width: 25%" src="/images/register_success.PNG"></img> 
+    <img style="width: 25%" src="/images/incorrect.PNG"></img>
+    <img style="width: 25%" src="/images/login_success.PNG"></img> 
+</div>
+
+<h4 id="2-Landing-page-and-Inserting-Deleting-Transaction-Entries"><a href="#2-Landing-page-and-Inserting-Deleting-Transaction-Entries" class="headerlink" title="2 Landing page and Inserting&#x2F;Deleting Transaction Entries"></a>2 Landing page and Inserting&#x2F;Deleting Transaction Entries</h4><div style="display: flex">
+    <img style="width: 25%" src="/images/Tally_book.PNG"></img>
+    <div style="display: flex; flex-direction: column; width: 100%">
+        <img src="/images/insert.PNG"></img>
+        <img src="/images/delete.PNG"></img>
+    </div>
+    <p style="margin-left: 10px"> Here user can add all the detail of one transaction: the item, amount, time, type and including some notes, then the list will display all the added transactions, user can also delete any transactions in the list.</p>
+</div>
+
+<h4 id="3-Web-Security-Solution"><a href="#3-Web-Security-Solution" class="headerlink" title="3 Web Security Solution"></a>3 Web Security Solution</h4><p>I utilized <strong>cookie</strong> and <strong>session</strong> to manage the login behaviors of users. </p>
+<p>Basically user has to login the account and modify the data, if the user already logged in, any requests within the account won’t go through login again such as directly access the list or inserting entry page, but if the user hasn’t logged in before, the request will redirect to the login page even the user wants to directly access the list page.</p>
+<p>This is achieved by sending a cooking to every user when user logged in each time, also create a session data stored in the database when user logged in, so any action user makes will send with a valid cookie that can skip the login step as long as user is logged in. When user logs out the session data will be removed and cookie will be set to invalid, so any further actions user will be redirected to login page and repeat the process. </p>
+<div style="display: flex">
+    <img style="width: 25%" src="/images/no_cookie_login.PNG"></img>
+    <div style="display: flex; flex-direction: column; width: 80%; margin-left: 10px">
+        <img src="/images/with_cookie.PNG"></img>
+        <p></p>
+        <img src="/images/without_cookie.PNG"></img>
+    </div>
+    <p style="margin-left: 10px">In a new incognito mode no cookie has been stored yet so user access to other pages will be direct to login page, but if a user already signed in, other pages can be accessed directly</p>
+</div>
+
+<h4 id="4-API-Security-Solution"><a href="#4-API-Security-Solution" class="headerlink" title="4 API Security Solution"></a>4 API Security Solution</h4><p>I used <strong>JSON Web Tokens (JWT)</strong> to validate login credentials and provide secure access to API endpoints, followed the <strong>RESTful</strong> API conventions and ensure a high level of security across the application.</p>
+<p>Demo of using <strong>Postman</strong> to send API request:</p>
+<div style="display: inline-block">
+    <img style="width: 25%" src="/images/api_login_token.PNG"></img>
+    <img style="width: 25%" src="/images/api_no_token.PNG"></img>
+    <img style="width: 25%" src="/images/with_api_token_read.PNG"></img>
+</div>
+
+<ol>
+<li>First send login request with valid username and password, receive a token</li>
+<li>Try send a read request without a token parameter, result is token missing</li>
+<li>Then send a read request with a token parameter, read result is successful</li>
+</ol>
+<h4 id="5-MongoDB-Graphic-User-Interface-using-Robo-3T"><a href="#5-MongoDB-Graphic-User-Interface-using-Robo-3T" class="headerlink" title="5 MongoDB Graphic User Interface using Robo 3T"></a>5 MongoDB Graphic User Interface using Robo 3T</h4><p>Here are some database demo when working with <strong>MongoDB</strong>, with a GUI tool <strong>Robo 3T</strong>:</p>
+<div style="display: flex">
+    <img style="width: 25%" src="/images/mongodb_account.PNG"></img>
+    <div style="display: flex; flex-direction: column; width: 50%; margin-left: 10px">
+        <img src="/images/mongodb_session.PNG"></img>
+        <p></p>
+        <img src="/images/mongodb_user.PNG"></img>
+    </div>
+    <p style="margin-left: 10px">The list, user and session representation in the database, updated in real time</p>
+</div>
+
+<h4 id="6-Logout"><a href="#6-Logout" class="headerlink" title="6 Logout"></a>6 Logout</h4><p>when user logs out successfully, of course user needs to log in to see other pages, accessing other pages without login will be redirect to the login page</p>
+<div style="display: inline-block">
+    <img style="width: 30%" src="/images/logout.PNG"></img>
+    <img style="width: 30%" src="/images/logout_to_login.PNG"></img>
+</div>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tech</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">projects</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-C-C-Notes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -579,6 +710,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Introduction</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">projects</a>
               </li>
             
             <div class="clearfix"></div>
